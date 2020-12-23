@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  web:
+    image: spotifyd
+    build:
+      context: .
+    devices:
+      - /dev/snd
+    restart: unless-stopped
+    command: spotifyd --config-path /etc/spotifyd.conf --no-daemon
