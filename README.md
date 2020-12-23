@@ -14,6 +14,11 @@ services:
     command: spotifyd --config-path /etc/spotifyd.conf --no-daemon
 ```
 
+## Build
+```bash
+docker buildx --tag addovej/spotifyd:latest --platform linux/amd64,linux/arm/v7,linux/arm/v6 --push
+```
+
 # Note
 I'm use this image as base just to copy spotifyd binary in my image to decrease building time.
 Don't use it if you not sure.
