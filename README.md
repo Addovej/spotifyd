@@ -1,4 +1,4 @@
-# [spotifyd](https://github.com/Spotifyd/spotifyd) in a docker
+# [spotifyd](https://github.com/Spotifyd/spotifyd) in docker.
 
 ## Usage
 Using only in docker-compose as service with specify volumes cause this image has not an entrypoint:
@@ -18,6 +18,11 @@ services:
 ```bash
 docker buildx --tag addovej/spotifyd:latest --platform linux/amd64,linux/arm/v7,linux/arm/v6 --push
 ```
+
+DockerHub image: [addovej/spotifyd:latest](https://hub.docker.com/r/addovej/spotifyd)
+
+A config file example in [official documentation of spotifyd](https://github.com/Spotifyd/spotifyd#configuration-file).
+You can use it and specify this file as volume in a compose file like this: `- /path/to/spotifyd.conf:/etc/spotifyd.conf`.
 
 # Note
 I'm use this image as base just to copy spotifyd binary in my image to decrease building time.
